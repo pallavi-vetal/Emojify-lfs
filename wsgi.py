@@ -1,6 +1,4 @@
 import numpy as np 
-import pandas as pd 
-import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from bs4 import BeautifulSoup
@@ -17,13 +15,8 @@ from keras.models import load_model
 import tensorflow as tf
 from nltk.stem.porter import PorterStemmer
 app = Flask(__name__,static_url_path='/static')
-import requests
-
 from zipfile import ZipFile 
-from tqdm import tqdm
 import requests
-
-
 import requests, zipfile, io
 url = "http://nlp.stanford.edu/data/glove.6B.zip"
 r = requests.get(url)
