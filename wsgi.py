@@ -17,7 +17,8 @@ import tensorflow as tf
 from nltk.stem.porter import PorterStemmer
 app = Flask(__name__,static_url_path='/static')
 import requests
-
+import nltk
+nltk.download()
 from tqdm import tqdm
 
 
