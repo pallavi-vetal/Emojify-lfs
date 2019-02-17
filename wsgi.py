@@ -1,12 +1,10 @@
 import numpy as np 
-import pandas as pd 
-import nltk
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
+
+
 from bs4 import BeautifulSoup
 import re
 from textblob import TextBlob
-from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask import Flask, redirect, render_template, request
 lemmatizer = WordNetLemmatizer()
 from emo_utils import *
 import emoji
