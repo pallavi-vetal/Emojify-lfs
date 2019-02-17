@@ -1,4 +1,6 @@
 import numpy as np 
+import pandas as pd 
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from bs4 import BeautifulSoup
@@ -6,7 +8,7 @@ import re
 from textblob import TextBlob
 from flask import Flask, flash, redirect, render_template, request, session, abort
 lemmatizer = WordNetLemmatizer()
-#from emo_utils import *
+from emo_utils import *
 import emoji
 import keras
 import os
@@ -15,9 +17,9 @@ from keras.models import load_model
 import tensorflow as tf
 from nltk.stem.porter import PorterStemmer
 app = Flask(__name__,static_url_path='/static')
-from zipfile import ZipFile 
 import requests
-import requests, zipfile, io
+
+from tqdm import tqdm
 
 
 def clean_sentences(df):
@@ -111,5 +113,4 @@ def emojify():
             s = str(x_test[0]) +' '+  label_to_emoji(np.argmax(loaded_model.predict(X_test_indices)))
     
     return render_template('index.html',emoji=s)
-
 
