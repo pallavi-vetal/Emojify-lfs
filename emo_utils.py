@@ -5,11 +5,7 @@ import pandas as pd
 import requests, zipfile, io
 from sklearn.metrics import confusion_matrix
 import os  
-if not (os.path.exists('./glove.6B.50d.txt')):
-    url = "http://nlp.stanford.edu/data/glove.6B.zip"
-    r = requests.get(url)
-    z = zipfile.ZipFile(io.BytesIO(r.content))
-    z.extractall()  
+
 
 def read_glove_vecs(glove_file):
     
