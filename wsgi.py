@@ -18,7 +18,7 @@ import tensorflow as tf
 from nltk.stem.porter import PorterStemmer
 app = Flask(__name__,static_url_path='/static')
 import requests
-import urllib2  # the lib that handles the url stuff
+
 from zipfile import ZipFile 
 from tqdm import tqdm
 import requests
