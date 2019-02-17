@@ -18,10 +18,6 @@ app = Flask(__name__,static_url_path='/static')
 from zipfile import ZipFile 
 import requests
 import requests, zipfile, io
-url = "http://nlp.stanford.edu/data/glove.6B.zip"
-r = requests.get(url)
-z = zipfile.ZipFile(io.BytesIO(r.content))
-z.extractall()  
 
 
 def clean_sentences(df):
